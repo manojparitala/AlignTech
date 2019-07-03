@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
+  validates_presence_of :name, :on => create
 
   def self.authenticate(email, password)
     user = find_by_email(email)
@@ -22,5 +23,11 @@ class User < ApplicationRecord
       self.password_salt = BCrypt::Engine.generate_salt
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
+  end
+
+  def deliver_password_reset_instructions!
+    self.perishable_token = SecureRandom.hex(4)
+    save(validate: false)
+    PasswordResetNotifier.password_reset_instructions(self).deliver_now
   end
 end
