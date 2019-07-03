@@ -1,0 +1,15 @@
+current directory: /Users/manojparitala/Desktop/aligntech/loginsystem/vendor/bundle/gems/bindex-0.7.0/ext/skiptrace
+/Users/manojparitala/.rvm/rubies/ruby-2.4.2/bin/ruby -r ./siteconf20190703-76782-1kg40tx.rb extconf.rb
+creating Makefile
+
+current directory: /Users/manojparitala/Desktop/aligntech/loginsystem/vendor/bundle/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/manojparitala/Desktop/aligntech/loginsystem/vendor/bundle/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/cruby.bundle
+
+current directory: /Users/manojparitala/Desktop/aligntech/loginsystem/vendor/bundle/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20190703-76782-1tc8j6j/skiptrace
