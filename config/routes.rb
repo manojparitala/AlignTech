@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root :to => "users#new"
   resources :users
   resources :sessions
+  resources :password_resets, :only => [ :new, :create, :edit, :update ]
 end
